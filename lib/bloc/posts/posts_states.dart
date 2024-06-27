@@ -1,6 +1,6 @@
 import 'package:bloc_test/utils/enums.dart';
 import 'package:equatable/equatable.dart';
-import '../../model/postmodel/post_model.dart';
+import '../../model/post_model/post_model.dart';
 
 class PostsStates extends Equatable{
 

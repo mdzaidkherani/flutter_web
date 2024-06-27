@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:bloc_test/model/postmodel/post_model.dart';
 import 'package:dio/dio.dart';
+import '../../model/post_model/post_model.dart';
 
 class PostRepository{
   
