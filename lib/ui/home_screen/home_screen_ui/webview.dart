@@ -28,11 +28,14 @@ class _CustomWebViewState extends State<CustomWebView> {
 
     final url = 'http://localhost:8080/users';
     try {
+      double duration = 0;
       final startTime = DateTime.now();
-      final response = await http.get(Uri.parse(url));
-      final endTime = DateTime.now();
-      final duration = (endTime.difference(startTime).inMilliseconds)/1000;
-      print(duration);
+      final response = await http.get(Uri.parse(url)).whenComplete((){
+        final endTime = DateTime.now();
+        duration = (endTime.difference(startTime).inMilliseconds)/1000;
+        print(duration);
+      });
+
       print(response.statusCode);
       if (response.statusCode == 200) {
         setState(() {

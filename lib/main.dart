@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'package:bloc_test/bloc/counter/counter_bloc.dart';
 import 'package:bloc_test/bloc/posts/posts_bloc.dart';
-import 'package:bloc_test/ui/counter_screen.dart';
-import 'package:bloc_test/ui/post_screen.dart';
-import 'package:bloc_test/ui/webview.dart';
+import 'package:bloc_test/bloc/users/users_bloc.dart';
+import 'package:bloc_test/ui/home_screen/home_screen_ui/counter_screen.dart';
+import 'package:bloc_test/ui/home_screen/home_screen_ui/post_screen.dart';
+import 'package:bloc_test/ui/home_screen/home_screen_ui/webview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => PostsBloc()),
+        BlocProvider(create: (_) => UsersBloc()),
         BlocProvider(create: (_) => CounterBloc()),
       ],
       child: MaterialApp(

@@ -6,4 +6,5 @@ enum ApiStatus {
   Success,
   Failed,
   NetworkError,
+  Refresh,
 }

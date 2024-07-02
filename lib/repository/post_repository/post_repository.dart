@@ -9,25 +9,35 @@ class PostRepository{
   Future<Map<String,dynamic>> fetchPost() async {
 
     try{
+      double duration = 0;
       final startTime = DateTime.now();
-      final response = await Dio().get('https://jsonplaceholder.typicode.com/comments');
-      final endTime = DateTime.now();
-      final duration = (endTime.difference(startTime).inMilliseconds)/1000;
-      print(duration);
+
+      final response = await Dio().get('https://jsonplaceholder.typicode.com/comments').whenComplete((){
+        final endTime = DateTime.now();
+        duration = (endTime.difference(startTime).inMilliseconds)/1000;
+        print('duration: '+duration.toString());
+      });
+
       if(response.statusCode == 200){
         List<PostModel> data = [];
         final List body = response.data;
         // print(body);
+        int count = 0;
         body.forEach((e){
-          data.add(
-            PostModel(
-              postId: e['postId'],
-              name: e['name'],
-              id: e['id'],
-              email: e['email'],
-              body: e['body'],
-            )
-          );
+          if(count <= 10){
+            data.add(
+                PostModel(
+                  postId: e['postId'],
+                  name: e['name'],
+                  id: e['id'],
+                  email: e['email'],
+                  body: e['body'],
+                )
+            );
+          }
+
+          count++;
+
         });
         return
         {
@@ -79,7 +89,5 @@ class PostRepository{
     print('cc');
     throw Exception('Error while fetching data');
   }
-
-
 
 }
