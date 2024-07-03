@@ -8,3 +8,4 @@ enum ApiStatus {
   NetworkError,
   Refresh,
 }
+

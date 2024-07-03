@@ -3,12 +3,11 @@ import 'package:bloc_test/bloc/posts/posts_events.dart';
 import 'package:bloc_test/bloc/posts/posts_states.dart';
 import 'package:bloc_test/bloc/users/users_event.dart';
 import 'package:bloc_test/bloc/users/users_state.dart';
-import 'package:bloc_test/repository/post_repository/post_repository.dart';
-import 'package:bloc_test/repository/users_repository/users_repository.dart';
+import 'package:bloc_test/services/post_services/post_services.dart';
+import 'package:bloc_test/services/users_services/users_services.dart';
 import 'package:bloc_test/utils/enums.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-
 
 class UsersBloc extends Bloc<UsersEvent, UsersStates> {
 
@@ -34,6 +33,7 @@ class UsersBloc extends Bloc<UsersEvent, UsersStates> {
       emit(state.copyWith(apiStatus: ApiStatus.Failed,message: error.toString(),timeTaken: 0.00));
     });
   }
+
   void refreshUsersApi(UsersRefresh event, Emitter<UsersStates> emit)async{
     emit(state.copyWith(apiStatus: ApiStatus.Refresh,message: '',postList: [],timeTaken: 0.00));
     await usersRepository.fetchUsers().then((value){

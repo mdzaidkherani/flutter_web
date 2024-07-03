@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc/posts/posts_events.dart';
 import 'package:bloc_test/bloc/posts/posts_states.dart';
-import 'package:bloc_test/repository/post_repository/post_repository.dart';
+import 'package:bloc_test/services/post_services/post_services.dart';
 import 'package:bloc_test/utils/enums.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';

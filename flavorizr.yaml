@@ -1,0 +1,13 @@
+flavors:
+  dev:
+    app:
+      name: "Flutter App Dev"
+      package_name: "com.example.flutterapp.dev"
+  staging:
+    app:
+      name: "Flutter App Staging"
+      package_name: "com.example.flutterapp.staging"
+  prod:
+    app:
+      name: "Flutter App"
+      package_name: "com.example.flutterapp"
