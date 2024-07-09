@@ -1,7 +1,7 @@
-import 'package:bloc_test/ui/couchdb_home/couchdb_home.dart';
-import 'package:bloc_test/ui/flavor/flavor_home_screen.dart';
-import 'package:bloc_test/ui/home_screen/counter_screen.dart';
-import 'package:bloc_test/ui/home_screen/post_screen.dart';
+import 'package:bloc_test/screens/couchdb_home/couchdb_home.dart';
+import 'package:bloc_test/screens/flavor/flavor_home_screen.dart';
+import 'package:bloc_test/screens/home_screen/counter_screen.dart';
+import 'package:bloc_test/screens/home_screen/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

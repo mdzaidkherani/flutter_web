@@ -1,8 +1,12 @@
 import 'dart:convert';
 
+import 'package:bloc_test/custom_theme/custom_colors.dart';
+import 'package:bloc_test/utils/helpers/text_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
+
+import '../../custom_theme/style.dart';
 
 class CouchDb_Example extends StatefulWidget {
   const CouchDb_Example({super.key});
@@ -31,7 +35,9 @@ class _CouchDb_ExampleState extends State<CouchDb_Example> {
               var res = response.body;
               print(res);
             },
-            child: Text('Submit'),
+            child: Text('Submit',
+              style: Style.textStyleRegular(color: YellowColor().shade900),
+            ),
           ),
           ElevatedButton(
             onPressed: ()async{
@@ -46,7 +52,9 @@ class _CouchDb_ExampleState extends State<CouchDb_Example> {
               var res = response.body;
               print(res);
             },
-            child: Text('Click Here'),
+            child: Text('Click Here',
+              style: Style.textStyleSemiBold(fontSize: 15.0,color: CustomColors.blackColor['800']!,lineHeight: 18.0),
+            ),
           ),
           ElevatedButton(
             onPressed: ()async{
@@ -62,8 +70,11 @@ class _CouchDb_ExampleState extends State<CouchDb_Example> {
               var res = response.body;
               print(res);
             },
-            child: Text('Go to another screen'),
+            child: Text('Go to another screen',
+              style: Style.textStyleBold(fontSize: 20,color: Colors.black),
+            ),
           ),
+
         ],
       ),
     );
